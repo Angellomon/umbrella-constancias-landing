@@ -1,11 +1,10 @@
 import { LandingLayout } from "./layouts";
+import { HeaderPrincipal } from "./components";
 
 export function App() {
   return (
     <LandingLayout>
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
+      <HeaderPrincipal />
     </LandingLayout>
   );
 }
