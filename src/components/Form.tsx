@@ -35,10 +35,10 @@ const FormEmail: FC<Props> = ({ onFinish = () => {} }) => {
 
   return (
     <form
-      class="flex sm:flex-col md:flex-row justify-center xs:items-end xl:items-center mt-3 mx-10 text-white"
+      class="flex flex-col md:flex-row justify-center items-end md:items-center mt-3 mx-10 text-white"
       onSubmit={handleSubmit}
     >
-      <label class="flex flex-col px-2 max-w-md ">
+      <label class="flex flex-col px-2 max-w-md w-full">
         Email
         <input
           placeholder="alguien@algunlugar.com"
@@ -53,7 +53,7 @@ const FormEmail: FC<Props> = ({ onFinish = () => {} }) => {
         )}
       </label>
       <button
-        class=" bg-blue-200 border-blue-600 px-4 py-2 text-blue-700 rounded-md"
+        class="w-full bg-blue-200 border-blue-600 px-2 py-2 mt-2 text-blue-700 rounded-md"
         type="submit"
       >
         Enviar
