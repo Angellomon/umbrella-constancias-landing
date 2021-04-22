@@ -7,7 +7,7 @@ export function App() {
   };
   return (
     <LandingLayout>
-      <div class="flex flex-col mx-40">
+      <div class="flex flex-col mx-10 xl:mx-20">
         <HeaderPrincipal />
         <FormEmail onFinish={handleFinished} />
         <AvisoConstancias />

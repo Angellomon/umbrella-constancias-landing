@@ -38,10 +38,10 @@ const FormEmail: FC<Props> = ({ onFinish = () => {} }) => {
       class="flex flex-col md:flex-row justify-center items-end md:items-end mt-3 mx-10 text-white"
       onSubmit={handleSubmit}
     >
-      <label class="flex flex-col px-2 max-w-md w-full">
+      <label class="flex flex-col px-2 md:max-w-md sm:w-full">
         Email
         <input
-          placeholder="alguien@algunlugar.com"
+          placeholder="alguien@algun-lugar.com"
           class="form-input rounded-md text-blue-900"
           id="email"
           type="email"
@@ -49,11 +49,12 @@ const FormEmail: FC<Props> = ({ onFinish = () => {} }) => {
           onInput={handleEmailInput}
         />
         {isError && (
-          <span class="text-yellow-200">* El correo no es válido</span>
+          <span class="text-yellow-200 ">* El correo no es válido</span>
         )}
       </label>
+
       <button
-        class="w-full bg-blue-200 border-blue-600 px-2 py-2 mt-2 text-blue-700 rounded-md"
+        class="w-full md:max-w-xs bg-blue-200 border-blue-600 px-2 py-2 mt-2 text-blue-700 rounded-md"
         type="submit"
       >
         Enviar

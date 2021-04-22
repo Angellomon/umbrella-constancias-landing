@@ -18,9 +18,9 @@ const AvisoConstancias: FC = () => {
   }, []);
 
   return (
-    <section class="flex flex-row m-20">
+    <section class="flex flex-col sm:flex-row md:flex-row mx-5 my-10 lg:m-20 justify-center">
       <article
-        class={`sm:w-3/4 sm:h-3/4 md:w-auto md:h-auto ${
+        class={`w-4/5 h-4/5 sm:w-3/4 sm:h-3/4 self-center ${
           visible ? "visible" : "invisible"
         }`}
       >
@@ -37,12 +37,12 @@ const AvisoConstancias: FC = () => {
             pathColor: "#fff",
           })}
         >
-          <p class="text-white max-w-xs text-center md:mt-28 lg:mt-32 sm:text-lg md:text-2xl ">
+          <p class="text-white max-w-xs w-4/5 text-center mt-20 lg:mt-32 text-lg sm:text-lg lg:text-xl ">
             de asistencia durante los 2 días
           </p>
         </CircularProgressbarWithChildren>
       </article>
-      <article class="flex flex-row mx-8">
+      <article class="flex flex-row mx-8 my-8">
         <div class="flex flex-col">
           <p class="font-light text-white text-xl my-3">
             Recuerda que para descargar tu constancia, es necesario que hayas
