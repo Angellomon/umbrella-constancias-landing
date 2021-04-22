@@ -42,7 +42,7 @@ const FormEmail: FC<Props> = ({ onFinish = () => {} }) => {
         Email
         <input
           placeholder="alguien@algunlugar.com"
-          class="px-2 py-2 border-white rounded-md text-blue-900"
+          class="form-input rounded-md text-blue-900"
           id="email"
           type="email"
           value={email}
