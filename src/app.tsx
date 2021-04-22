@@ -1,10 +1,13 @@
 import { LandingLayout } from "./layouts";
-import { HeaderPrincipal } from "./components";
+import { AvisoConstancias, HeaderPrincipal } from "./components";
 
 export function App() {
   return (
     <LandingLayout>
-      <HeaderPrincipal />
+      <div class="flex flex-col mx-40">
+        <HeaderPrincipal />
+        <AvisoConstancias />
+      </div>
     </LandingLayout>
   );
 }
