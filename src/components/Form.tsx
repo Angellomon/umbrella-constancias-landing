@@ -35,7 +35,7 @@ const FormEmail: FC<Props> = ({ onFinish = () => {} }) => {
 
   return (
     <form
-      class="flex flex-col md:flex-row justify-center items-end md:items-center mt-3 mx-10 text-white"
+      class="flex flex-col md:flex-row justify-center items-end md:items-end mt-3 mx-10 text-white"
       onSubmit={handleSubmit}
     >
       <label class="flex flex-col px-2 max-w-md w-full">
