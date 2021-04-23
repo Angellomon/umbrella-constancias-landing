@@ -1,12 +1,9 @@
 import { FunctionComponent as FC } from "preact";
 import { useEffect, useRef, useState } from "preact/hooks";
 import {
-  CircularProgressbar,
   buildStyles,
   CircularProgressbarWithChildren,
 } from "react-circular-progressbar";
-import { ChangingProgressProvider } from "../context";
-import { useChangingProgress } from "../hooks";
 
 const AvisoConstancias: FC = () => {
   const [visible, setVisible] = useState(false);
@@ -18,9 +15,9 @@ const AvisoConstancias: FC = () => {
   }, []);
 
   return (
-    <section class="flex flex-col sm:flex-row md:flex-row mx-5 my-10 lg:m-20 justify-center">
+    <section class="flex flex-col sm:flex-row md:flex-row mx-5 my-10  justify-center">
       <article
-        class={`w-4/5 h-4/5 sm:w-3/4 sm:h-3/4 self-center ${
+        class={`w-4/5 h-4/5 sm:w-3/4 sm:h-3/4 lg:w-1/2 lg:h-1/2 xl:w-1/3 xl:h-1/3 self-center ${
           visible ? "visible" : "invisible"
         }`}
       >
@@ -37,7 +34,7 @@ const AvisoConstancias: FC = () => {
             pathColor: "#fff",
           })}
         >
-          <p class="text-white max-w-xs w-4/5 text-center mt-20 lg:mt-32 text-lg sm:text-lg lg:text-xl ">
+          <p class="text-white max-w-xs w-4/5  text-center mt-20 sm:mt-32 lg:mt-32 text-lg sm:text-lg lg:text-xl ">
             de asistencia durante los 2 días
           </p>
         </CircularProgressbarWithChildren>

@@ -28,17 +28,17 @@ const FormEmail: FC<Props> = ({ onFinish = () => {} }) => {
   ) => {
     if (!event.target) return;
     setIsError(false);
-    console.log(event.target.value);
+    console.log((event.target as any).value);
 
-    setEmail(event.target.value);
+    setEmail((event.target as any).value);
   };
 
   return (
     <form
-      class="flex flex-col md:flex-row justify-center items-end md:items-end mt-3 mx-10 text-white"
+      class="flex flex-col md:flex-row justify-center items-center md:items-end mt-3 mx-10 text-white"
       onSubmit={handleSubmit}
     >
-      <label class="flex flex-col px-2 md:max-w-md sm:w-full">
+      <label class="flex flex-col md:max-w-md sm:w-full">
         Email
         <input
           placeholder="alguien@algun-lugar.com"
@@ -54,7 +54,7 @@ const FormEmail: FC<Props> = ({ onFinish = () => {} }) => {
       </label>
 
       <button
-        class="w-full md:max-w-xs bg-blue-200 border-blue-600 px-2 py-2 mt-2 text-blue-700 rounded-md"
+        class="form-input w-full md:max-w-xs bg-blue-200 border-blue-600 px-2 py-2 mt-2 text-blue-700 rounded-md"
         type="submit"
       >
         Enviar
