@@ -33,6 +33,8 @@ export function App() {
       document.body.appendChild(link);
       link.click();
     } catch (error) {
+      console.log(error);
+
       setIsError(true);
     } finally {
       setIsLoading(false);
