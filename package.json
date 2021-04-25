@@ -11,6 +11,7 @@
     "axios": "^0.21.1",
     "preact": "^10.5.13",
     "preact-compat": "^3.19.0",
+    "preact-router": "^3.2.1",
     "react-circular-progressbar": "^2.0.4"
   },
   "devDependencies": {
