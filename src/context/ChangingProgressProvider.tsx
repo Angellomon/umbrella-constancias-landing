@@ -35,6 +35,6 @@ const ChangingProgressProvider: FC<Props> = ({
       {children}
     </ChangingProgressContext.Provider>
   );
-};
+}; //:)
 
 export default ChangingProgressProvider;
