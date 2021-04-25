@@ -9,9 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontWeight: ["hover", "focus"],
-      fontFamily: {
-        body: ['Comic Sans', ...defaultTheme.fontFamily.sans]
-      },
+      fontFamily: false,
       colors: {
         blue: {
           600: "#4974AF",
