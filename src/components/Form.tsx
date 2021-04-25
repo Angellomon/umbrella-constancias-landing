@@ -4,9 +4,10 @@ import { emailIsValid } from "./util";
 
 interface Props {
   onFinish?: (email: string) => void | Promise<void>;
+  isLoading?: boolean;
 }
 
-const FormEmail: FC<Props> = ({ onFinish = () => {} }) => {
+const FormEmail: FC<Props> = ({ onFinish = () => {}, isLoading = false }) => {
   const [email, setEmail] = useState<string | undefined>(undefined);
   const [isError, setIsError] = useState(false);
 
@@ -28,7 +29,6 @@ const FormEmail: FC<Props> = ({ onFinish = () => {} }) => {
   ) => {
     if (!event.target) return;
     setIsError(false);
-    console.log((event.target as any).value);
 
     setEmail((event.target as any).value);
   };
@@ -39,7 +39,10 @@ const FormEmail: FC<Props> = ({ onFinish = () => {} }) => {
       onSubmit={handleSubmit}
     >
       <label class="flex flex-col md:max-w-md sm:w-full">
-        Email
+        Email{" "}
+        {isError && (
+          <div class="text-yellow-200 ">* El correo no es válido</div>
+        )}
         <input
           placeholder="alguien@algun-lugar.com"
           class="form-input rounded-md text-blue-900"
@@ -48,17 +51,16 @@ const FormEmail: FC<Props> = ({ onFinish = () => {} }) => {
           value={email}
           onInput={handleEmailInput}
         />
-        {isError && (
-          <span class="text-yellow-200 ">* El correo no es válido</span>
-        )}
       </label>
-
-      <button
-        class="form-input w-full md:max-w-xs bg-blue-200 border-blue-600 px-2 py-2 mt-2 text-blue-700 rounded-md"
-        type="submit"
-      >
-        Enviar
-      </button>
+      <span class="form-input ml-5 ">
+        <button
+          disabled={isLoading}
+          class={`focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-opacity-50 w-full md:max-w-xs bg-blue-200  px-2 py-2 mt-2 text-blue-600 rounded-md`}
+          type="submit"
+        >
+          Enviar
+        </button>
+      </span>
     </form>
   );
 };
