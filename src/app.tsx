@@ -17,7 +17,7 @@ export function App() {
       setIsLoading(true);
       setIsError(false);
       const res = await axios.get(
-        `https://naequina-constancias.herokuapp.com/api/v1/asistentes/buscar?correo=${email}`,
+        `http://localhost:5001/api/v1/asistentes/buscar?correo=${email}`,
         {
           responseType: "blob",
         }
@@ -26,11 +26,12 @@ export function App() {
       if (res.status !== 200) return;
 
       const url = window.URL.createObjectURL(new Blob([res.data]));
-      const link = document.createElement("a");
-      link.href = url;
-      link.setAttribute("download", "file.pdf"); //or any other extension
-      document.body.appendChild(link);
-      link.click();
+      window.open(url);
+      // const link = document.createElement("a");
+      // link.href = url;
+      // link.setAttribute("download", "file.pdf"); //or any other extension
+      // document.body.appendChild(link);
+      // link.click();
     } catch (error) {
       console.log(error);
 
