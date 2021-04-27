@@ -48,13 +48,11 @@ export function App() {
 
   return (
     <LandingLayout>
-      <div class="flex flex-col px-10 sm:px-40 xl:px-72">
-        <HeaderPrincipal />
-        <FormEmail onFinish={handleFinished} isLoading={isLoading} />
-        {isError && <NotFoundAlert onClose={handleClose} />}
-        <AvisoConstancias />
-        <Footer />
-      </div>
+      <HeaderPrincipal />
+      <FormEmail onFinish={handleFinished} isLoading={isLoading} />
+      {isError && <NotFoundAlert onClose={handleClose} />}
+      <AvisoConstancias />
+      <Footer />
     </LandingLayout>
   );
 }

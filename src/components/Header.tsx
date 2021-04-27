@@ -4,8 +4,8 @@ import Logo from "../assets/logo_naequina.png";
 interface Props {}
 
 const HeaderPrincipal: FC<Props> = () => (
-  <section class="flex flex-col justify-center md:justify-around">
-    <div class="text-5xl lg:text-8xl  text-center text-white mb-5">
+  <section class="flex flex-col mt-7 justify-center md:justify-around">
+    <div class="text-5xl md:text-8xl  text-center text-white mb-5">
       Constancias
     </div>
     <div class="flex flex-col sm:flex-row  justify-center items-start">
