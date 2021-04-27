@@ -17,7 +17,9 @@ const Porcentaje: FC = () => {
 
   return (
     <article
-      class={` w-auto h-full self-center ${visible ? "visible" : "invisible"}`}
+      class={`px-10 md:px-28 md:max-w-lg self-center ${
+        visible ? "visible" : "invisible"
+      }`}
     >
       <CircularProgressbarWithChildren
         strokeWidth={5}
