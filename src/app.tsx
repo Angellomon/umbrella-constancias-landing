@@ -4,6 +4,7 @@ import {
   FormEmail,
   HeaderPrincipal,
   NotFoundAlert,
+  Footer,
 } from "./components";
 import axios from "axios";
 import { useState } from "preact/hooks";
@@ -52,6 +53,7 @@ export function App() {
         <FormEmail onFinish={handleFinished} isLoading={isLoading} />
         {isError && <NotFoundAlert onClose={handleClose} />}
         <AvisoConstancias />
+        <Footer />
       </div>
     </LandingLayout>
   );
