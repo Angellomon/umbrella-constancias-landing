@@ -17,7 +17,7 @@ const Porcentaje: FC = () => {
 
   return (
     <article
-      class={`px-10 md:px-28 md:max-w-lg self-center ${
+      class={`px-14 md:px-28 md:max-w-lg self-center ${
         visible ? "visible" : "invisible"
       }`}
     >
@@ -35,7 +35,7 @@ const Porcentaje: FC = () => {
           textSize: 25,
         })}
       >
-        <p class="text-white max-w-xs w-4/5  text-center mt-20 sm:mt-32 lg:mt-32 text-lg lg:text-xl ">
+        <p class="text-white max-w-xs w-4/5  text-center mt-24 sm:mt-32 lg:mt-32 text-lg lg:text-md md:pb-7 ">
           de asistencia durante los 2 días
         </p>
       </CircularProgressbarWithChildren>

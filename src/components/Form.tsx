@@ -35,7 +35,7 @@ const FormEmail: FC<Props> = ({ onFinish = () => {}, isLoading = false }) => {
 
   return (
     <form
-      class="flex flex-col md:flex-row justify-center items-center md:items-end mt-3 mx-10 text-white"
+      class="flex flex-col md:flex-row justify-center items-center md:items-end mt-10 mx-10 text-white"
       onSubmit={handleSubmit}
     >
       <label class="flex flex-col md:max-w-md sm:w-full">
@@ -52,15 +52,13 @@ const FormEmail: FC<Props> = ({ onFinish = () => {}, isLoading = false }) => {
           onInput={handleEmailInput}
         />
       </label>
-      <span class="form-input ml-5 ">
-        <button
-          disabled={isLoading}
-          class={`focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-opacity-50 w-full md:max-w-xs bg-blue-200  px-2 py-2 mt-2 text-blue-600 rounded-md`}
-          type="submit"
-        >
-          Enviar
-        </button>
-      </span>
+      <button
+        disabled={isLoading}
+        class={`md:ml-5 block focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-opacity-30 w-full md:max-w-xs bg-blue-200  px-2 py-2 mt-2 text-blue-600 rounded-md`}
+        type="submit"
+      >
+        Enviar
+      </button>
     </form>
   );
 };

@@ -4,7 +4,7 @@ import Mensaje from "./Mensaje";
 
 const AvisoConstancias: FC = () => {
   return (
-    <section class="flex flex-col mx-5 mt-10 justify-center items-center">
+    <section class="flex flex-col mt-10 justify-center items-center">
       <Mensaje />
       <Porcentaje />
     </section>
