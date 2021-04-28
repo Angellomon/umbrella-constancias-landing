@@ -17,6 +17,16 @@ module.exports = {
           800: "#2c4669"
         },
       },
+      animation: {
+        'reverse-spin': 'reverse-spin 1s linear infinite'
+      },
+      keyframes: {
+        'reverse-spin': {
+          from: {
+            transform: 'rotate(360deg)'
+          },
+        }
+      }
     },
   },
   variants: {},

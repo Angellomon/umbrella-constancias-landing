@@ -1,27 +1,32 @@
 import { FunctionComponent as FC, JSX } from "preact";
-import { useState } from "preact/hooks";
+import { useState, useEffect } from "preact/hooks";
 import { emailIsValid } from "./util";
+import Loading from "./Loading";
 
 interface Props {
   onFinish?: (email: string) => void | Promise<void>;
   isLoading?: boolean;
 }
 
-const FormEmail: FC<Props> = ({ onFinish = () => {}, isLoading = false }) => {
+const FormEmail: FC<Props> = ({ onFinish = () => {} }) => {
   const [email, setEmail] = useState<string | undefined>(undefined);
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit: JSX.GenericEventHandler<HTMLFormElement> = async (
-    event
-  ) => {
-    event.preventDefault();
+  const handleSubmit: JSX.GenericEventHandler<HTMLFormElement> = (event) => {
+    const doSubmit = async () => {
+      setIsLoading(true);
+      event.preventDefault();
 
-    if (emailIsValid(email)) {
-      if (!email) return;
+      if (emailIsValid(email)) {
+        if (!email) return;
 
-      await onFinish(email);
-      setIsError(false);
-    } else setIsError(true);
+        await onFinish(email);
+        setIsError(false);
+      } else setIsError(true);
+      setIsLoading(false);
+    };
+    doSubmit();
   };
 
   const handleEmailInput: JSX.GenericEventHandler<HTMLInputElement> = (
@@ -39,7 +44,7 @@ const FormEmail: FC<Props> = ({ onFinish = () => {}, isLoading = false }) => {
       onSubmit={handleSubmit}
     >
       <label class="flex flex-col w-full mx-10 md:mx-0">
-        Email{" "}
+        Email
         {isError && (
           <div class="text-yellow-200 ">* El correo no es válido</div>
         )}
@@ -54,10 +59,13 @@ const FormEmail: FC<Props> = ({ onFinish = () => {}, isLoading = false }) => {
       </label>
       <button
         disabled={isLoading}
-        class={`md:ml-5 block focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-opacity-30 w-full md:max-w-xs bg-blue-200  px-2 py-2 mt-2 text-blue-600 rounded-md`}
+        class={`md:ml-5 block focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-opacity-30 w-full md:w-1/3 md:max-w-xs bg-blue-200 px-2 py-2 mt-2 text-blue-600 rounded-md`}
         type="submit"
       >
-        Enviar
+        <span class="flex flex-row justify-center">
+          {isLoading ? <span>Descargando...</span> : <span>Enviar</span>}
+          {isLoading && <Loading />}
+        </span>
       </button>
     </form>
   );

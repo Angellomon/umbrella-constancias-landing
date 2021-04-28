@@ -10,12 +10,10 @@ import axios from "axios";
 import { useState } from "preact/hooks";
 
 export function App() {
-  const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
   const handleFinished = async (email: string) => {
     try {
-      setIsLoading(true);
       setIsError(false);
       const res = await axios.get(
         // `https://naequina-constancias.herokuapp.com/api/v1/asistentes/buscar?correo=${email}`,
@@ -39,7 +37,6 @@ export function App() {
 
       setIsError(true);
     } finally {
-      setIsLoading(false);
     }
   };
 
@@ -50,7 +47,7 @@ export function App() {
   return (
     <LandingLayout>
       <HeaderPrincipal />
-      <FormEmail onFinish={handleFinished} isLoading={isLoading} />
+      <FormEmail onFinish={handleFinished} />
       {isError && <NotFoundAlert onClose={handleClose} />}
       <AvisoConstancias />
       <Footer />
