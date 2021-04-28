@@ -9,7 +9,6 @@ import {
 } from "./components";
 import axios from "axios";
 import { useState } from "preact/hooks";
-import { route } from "preact-router";
 
 export function App() {
   const [isError, setIsError] = useState(false);
