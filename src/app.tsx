@@ -5,12 +5,16 @@ import {
   HeaderPrincipal,
   NotFoundAlert,
   Footer,
+  PDFDoc,
 } from "./components";
 import axios from "axios";
 import { useState } from "preact/hooks";
+import { route } from "preact-router";
 
 export function App() {
   const [isError, setIsError] = useState(false);
+
+  const [pdfFile, setPdfFile] = useState("");
 
   const handleFinished = async (email: string) => {
     try {
@@ -26,12 +30,12 @@ export function App() {
       if (res.status !== 200) return;
 
       const url = window.URL.createObjectURL(new Blob([res.data]));
-      window.open(url);
-      // const link = document.createElement("a");
-      // link.href = url;
-      // link.setAttribute("download", "file.pdf"); //or any other extension
-      // document.body.appendChild(link);
-      // link.click();
+      // window.open(url);
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", "file.pdf"); //or any other extension
+      document.body.appendChild(link);
+      link.click();
     } catch (error) {
       console.log(error);
 
@@ -51,6 +55,7 @@ export function App() {
       {isError && <NotFoundAlert onClose={handleClose} />}
       <AvisoConstancias />
       <Footer />
+      {pdfFile && <PDFDoc file={pdfFile} />}
     </LandingLayout>
   );
 }

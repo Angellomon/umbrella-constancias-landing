@@ -7,6 +7,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@pdftron/webviewer": "^7.3.1",
     "@tailwindcss/forms": "^0.3.2",
     "axios": "^0.21.1",
     "preact": "^10.5.13",
@@ -17,6 +18,7 @@
   "devDependencies": {
     "@preact/preset-vite": "^2.0.1",
     "@prefresh/vite": "^2.2.1",
+    "@types/pdfjs-dist": "^2.7.1",
     "autoprefixer": "^10.2.5",
     "cross-env": "^7.0.3",
     "postcss": "^8.2.10",
