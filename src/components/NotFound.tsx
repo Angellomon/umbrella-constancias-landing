@@ -7,11 +7,13 @@ interface Props {
 const NotFoundAlert: FunctionalComponent<Props> = ({ onClose = () => {} }) => {
   return (
     <div
-      class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-5 mx-32"
+      class="bg-red-100 border border-red-400 text-red-700 px-8 py-3 rounded relative mt-5 mx-32"
       role="alert"
     >
-      <strong class="font-bold">Error!</strong>
-      <span class="block sm:inline ml-2">No se ha encontrado el correo.</span>
+      <span class="block sm:inline my-3">
+        Según nuestros registros, no completaste el 55% de asistencia requerida
+        para acceder a la constancia.
+      </span>
       <span class="absolute top-0 bottom-0 right-0 px-4 py-3" onClick={onClose}>
         <svg
           class="fill-current h-6 w-6 text-red-500"

@@ -18,7 +18,8 @@ export function App() {
       setIsLoading(true);
       setIsError(false);
       const res = await axios.get(
-        `https://naequina-constancias.herokuapp.com/api/v1/asistentes/buscar?correo=${email}`,
+        // `https://naequina-constancias.herokuapp.com/api/v1/asistentes/buscar?correo=${email}`,
+        `http://localhost:5001/api/v1/asistentes/buscar?correo=${email}`,
         {
           responseType: "blob",
         }
