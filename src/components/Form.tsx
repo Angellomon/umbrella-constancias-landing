@@ -35,10 +35,10 @@ const FormEmail: FC<Props> = ({ onFinish = () => {}, isLoading = false }) => {
 
   return (
     <form
-      class="flex flex-col md:flex-row justify-center items-center md:items-end mt-10 max-w-3xl  text-white w-full"
+      class="flex flex-col md:flex-row justify-center items-center md:items-end mt-10 max-w-sm md:max-w-3xl w-3/4 lg:w-full text-white"
       onSubmit={handleSubmit}
     >
-      <label class="flex flex-col w-full mx-8">
+      <label class="flex flex-col w-full mx-10 md:mx-0">
         Email{" "}
         {isError && (
           <div class="text-yellow-200 ">* El correo no es válido</div>
