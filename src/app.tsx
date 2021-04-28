@@ -32,7 +32,10 @@ export function App() {
       // window.open(url);
       const link = document.createElement("a");
       link.href = url;
-      link.setAttribute("download", "file.pdf"); //or any other extension
+      link.setAttribute(
+        "download",
+        "CONSTANCIA DE PARTICIPACIÓN NAEQUINA 2021.pdf"
+      ); //or any other extension
       document.body.appendChild(link);
       link.click();
     } catch (error) {
