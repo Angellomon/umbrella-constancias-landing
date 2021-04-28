@@ -7,8 +7,8 @@ const Mensaje: FC = () => {
         <p class="text-justify font-light text-white text-xl xl:text-2xl my-3 lg:mt-10 leading-tight">
           Recuerda que para descargar tu constancia, es necesario que hayas
           cumplido con los requerimientos mínimos de asistencia del{" "}
-          <strong class="text-white text-2xl font-bold">55 %</strong>
-          del tiempo. En caso que no lo hayas cubierto, no podrás descargar la
+          <strong class="text-white text-2xl font-bold">55 %</strong> del
+          tiempo. En caso que no lo hayas cubierto, no podrás descargar la
           constancia.
         </p>
       </div>
