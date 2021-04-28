@@ -7,7 +7,7 @@ interface Props {
 const NotFoundAlert: FunctionalComponent<Props> = ({ onClose = () => {} }) => {
   return (
     <div
-      class="bg-red-100 border border-red-400 text-red-700 px-8 py-3 rounded relative mt-5 mx-32"
+      class="bg-red-100 border border-red-400 text-red-700 px-8 py-3 rounded relative mt-5 mx-11 sm:mx-24 lg:mx-11"
       role="alert"
     >
       <span class="block sm:inline my-3">

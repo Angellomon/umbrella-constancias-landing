@@ -2,7 +2,7 @@ import { FunctionalComponent as FC } from "preact";
 
 const Mensaje: FC = () => {
   return (
-    <article class="flex flex-row mx-8 my-8">
+    <article class="flex flex-row mx-8 md:mx-32 my-8">
       <div class="flex flex-col">
         <p class="font-light text-white text-xl xl:text-2xl my-3 lg:mt-10 leading-tight">
           Recuerda que para descargar tu constancia, es necesario que hayas

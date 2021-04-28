@@ -1,5 +1,5 @@
 import { FunctionComponent as FC, JSX } from "preact";
-import { useState, useEffect } from "preact/hooks";
+import { useState } from "preact/hooks";
 import { emailIsValid } from "./util";
 import Loading from "./Loading";
 
@@ -59,11 +59,11 @@ const FormEmail: FC<Props> = ({ onFinish = () => {} }) => {
       </label>
       <button
         disabled={isLoading}
-        class={`md:ml-5 block focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-opacity-30 w-full md:w-1/3 md:max-w-xs bg-blue-200 px-2 py-2 mt-2 text-blue-600 rounded-md`}
+        class={`cursor-pointer md:ml-5 block focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-opacity-30 w-full md:w-1/3 md:max-w-xs bg-blue-200 px-2 py-2 mt-2 text-blue-600 rounded-md`}
         type="submit"
       >
         <span class="flex flex-row justify-center">
-          {isLoading ? <span>Descargando...</span> : <span>Enviar</span>}
+          {isLoading ? <span>Cargando...</span> : <span>Enviar</span>}
           {isLoading && <Loading />}
         </span>
       </button>
