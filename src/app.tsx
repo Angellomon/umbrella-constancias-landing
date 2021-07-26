@@ -19,7 +19,7 @@ export function App() {
     try {
       setIsError(false);
       const res = await axios.get(
-        `https://naequina-constancias.herokuapp.com/api/v1/asistentes/buscar?correo=${email}`,
+        `https://umbrella-constancias.herokuapp.com/eventos/d02mbve0yy/asistentes/buscar?correo=${email}`,
         {
           responseType: "blob",
         }
